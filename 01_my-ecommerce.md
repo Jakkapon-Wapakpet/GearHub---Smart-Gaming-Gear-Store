@@ -134,6 +134,11 @@
   * [07_mongodb-shcema_orders.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/07_mongodb-shcema_orders.json) - โครงสร้างการจัดเก็บรายละเอียดคำสั่งซื้อ
 * **สคริปต์เริ่มต้นระบบ (Database Seeding):**
   * [seed.js](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/seed.js) - สคริปต์สำหรับเชื่อมต่อ ตั้งค่าระบบ Validate Schema และ Seed ข้อมูลเริ่มต้นใน MongoDB
+  * **วิธีการรันสคริปต์เพื่อรีเซ็ต/นำเข้าข้อมูล:**
+    1. ติดตั้ง Dependencies: `npm install`
+    2. รันด้วย Local MongoDB (Default): `node seed.js`
+    3. รันด้วย MongoDB Atlas (PowerShell): `$env:MONGODB_URI="your_connection_string"; node seed.js`
+    4. รันด้วย MongoDB Atlas (CMD): `set MONGODB_URI=your_connection_string&& node seed.js`
 
 * **แผนผังจำลองการออกแบบภาพ (Excalidraw Visual Templates):**
   * [08_User-Persona-Journey.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/08_User-Persona-Journey.excalidraw) - แผนผังภาพ Persona ทั้ง 4 คนแบบจัดเต็ม
