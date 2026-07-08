@@ -33,7 +33,7 @@
               "description": "Snapshot of product name at the time of purchase"
             },
             "price": {
-              "bsonType": "double",
+              "bsonType": ["double", "int"],
               "description": "Snapshot of unit price at the time of purchase"
             },
             "quantity": {
@@ -62,7 +62,7 @@
         "description": "Chosen payment method"
       },
       "totalAmount": {
-        "bsonType": "double",
+        "bsonType": ["double", "int"],
         "minimum": 0,
         "description": "Total checkout price in THB (items price * quantity + shipping - discount)"
       },

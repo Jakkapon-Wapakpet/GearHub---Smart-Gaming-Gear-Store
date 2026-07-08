@@ -22,12 +22,12 @@
         "description": "Product category for sorting and filtering"
       },
       "price": {
-        "bsonType": "double",
+        "bsonType": ["double", "int"],
         "minimum": 0,
         "description": "Retail price of the product in Thai Baht (THB)"
       },
       "stock": {
-        "bsonType": "int",
+        "bsonType": ["int", "double"],
         "minimum": 0,
         "description": "Current stock quantity in inventory"
       },

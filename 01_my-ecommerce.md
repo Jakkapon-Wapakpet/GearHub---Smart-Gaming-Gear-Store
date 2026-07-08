@@ -132,6 +132,8 @@
   * [05_mongodb.schema_user.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/05_mongodb.schema_user.json) - โมเดลโครงสร้างตารางสมาชิก
   * [06_mongodb-schema_products.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_products.json) - โครงสร้างข้อมูลสเปกสินค้า
   * [07_mongodb-shcema_orders.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/07_mongodb-shcema_orders.json) - โครงสร้างการจัดเก็บรายละเอียดคำสั่งซื้อ
+* **สคริปต์เริ่มต้นระบบ (Database Seeding):**
+  * [seed.js](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/seed.js) - สคริปต์สำหรับเชื่อมต่อ ตั้งค่าระบบ Validate Schema และ Seed ข้อมูลเริ่มต้นใน MongoDB
 
 * **แผนผังจำลองการออกแบบภาพ (Excalidraw Visual Templates):**
   * [08_User-Persona-Journey.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/08_User-Persona-Journey.excalidraw) - แผนผังภาพ Persona ทั้ง 4 คนแบบจัดเต็ม
