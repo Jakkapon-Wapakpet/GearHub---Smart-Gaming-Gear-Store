@@ -1,0 +1,109 @@
+{
+  "collectionName": "orders",
+  "description": "Schema representation for storing customer order details and ordered items in GearHub (embedding OrderItems for MongoDB best practices)",
+  "schema": {
+    "bsonType": "object",
+    "required": ["userId", "items", "shippingAddress", "paymentMethod", "totalAmount", "status"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Unique identifier for the order"
+      },
+      "userId": {
+        "bsonType": "objectId",
+        "description": "Reference to the User document who placed the order"
+      },
+      "orderDate": {
+        "bsonType": "date",
+        "description": "Timestamp when the order was placed"
+      },
+      "items": {
+        "bsonType": "array",
+        "description": "Array of ordered products (Embedded OrderItems)",
+        "items": {
+          "bsonType": "object",
+          "required": ["productId", "name", "price", "quantity"],
+          "properties": {
+            "productId": {
+              "bsonType": "objectId",
+              "description": "Reference to the Product document"
+            },
+            "name": {
+              "bsonType": "string",
+              "description": "Snapshot of product name at the time of purchase"
+            },
+            "price": {
+              "bsonType": "double",
+              "description": "Snapshot of unit price at the time of purchase"
+            },
+            "quantity": {
+              "bsonType": "int",
+              "minimum": 1,
+              "description": "Number of units ordered"
+            }
+          }
+        }
+      },
+      "shippingAddress": {
+        "bsonType": "object",
+        "required": ["receiverName", "phone", "addressLine", "subDistrict", "district", "province", "postalCode"],
+        "properties": {
+          "receiverName": { "bsonType": "string" },
+          "phone": { "bsonType": "string" },
+          "addressLine": { "bsonType": "string", "description": "Street address, building, house number" },
+          "subDistrict": { "bsonType": "string" },
+          "district": { "bsonType": "string" },
+          "province": { "bsonType": "string" },
+          "postalCode": { "bsonType": "string", "pattern": "^[0-9]{5}$" }
+        }
+      },
+      "paymentMethod": {
+        "enum": ["PromptPay", "CreditCard", "DebitCard", "Installment"],
+        "description": "Chosen payment method"
+      },
+      "totalAmount": {
+        "bsonType": "double",
+        "minimum": 0,
+        "description": "Total checkout price in THB (items price * quantity + shipping - discount)"
+      },
+      "status": {
+        "enum": ["Pending", "Paid", "Processing", "Shipped", "Delivered", "Cancelled"],
+        "description": "Order processing status"
+      },
+      "trackingNumber": {
+        "bsonType": "string",
+        "description": "Courier tracking number (e.g., Flash, EMS)"
+      },
+      "updatedAt": {
+        "bsonType": "date"
+      }
+    }
+  },
+  "exampleDocument": {
+    "_id": { "$oid": "60c72b2f9b1d8b2bad000003" },
+    "userId": { "$oid": "60c72b2f9b1d8b2bad000001" },
+    "orderDate": { "$date": "2026-07-08T07:10:00.000Z" },
+    "items": [
+      {
+        "productId": { "$oid": "60c72b2f9b1d8b2bad000002" },
+        "name": "Razer Viper V3 Pro",
+        "price": 5390.0,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "receiverName": "สมชาย รักเรียน",
+      "phone": "0812345678",
+      "addressLine": "123/45 หมู่บ้านสุขใจ ซอย 5",
+      "subDistrict": "จอมพล",
+      "district": "จตุจักร",
+      "province": "กรุงเทพมหานคร",
+      "postalCode": "10900"
+    },
+    "paymentMethod": "PromptPay",
+    "totalAmount": 5390.0,
+    "status": "Paid",
+    "trackingNumber": "TH0123456789A",
+    "updatedAt": { "$date": "2026-07-08T07:11:00.000Z" }
+  }
+}

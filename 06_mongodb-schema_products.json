@@ -1,0 +1,88 @@
+{
+  "collectionName": "products",
+  "description": "Schema representation for storing gaming gear products with detailed specifications for comparison",
+  "schema": {
+    "bsonType": "object",
+    "required": ["name", "category", "price", "stock", "specifications"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Unique identifier for the product"
+      },
+      "name": {
+        "bsonType": "string",
+        "description": "Full product name (e.g., Razer Viper V3 Pro)"
+      },
+      "description": {
+        "bsonType": "string",
+        "description": "Detailed marketing description of the product"
+      },
+      "category": {
+        "enum": ["Mouse", "Keyboard", "Headset", "Accessories"],
+        "description": "Product category for sorting and filtering"
+      },
+      "price": {
+        "bsonType": "double",
+        "minimum": 0,
+        "description": "Retail price of the product in Thai Baht (THB)"
+      },
+      "stock": {
+        "bsonType": "int",
+        "minimum": 0,
+        "description": "Current stock quantity in inventory"
+      },
+      "images": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" },
+        "description": "Array of image URLs for the product"
+      },
+      "specifications": {
+        "bsonType": "object",
+        "description": "Dynamic specs based on category. Key to enabling Product Comparison",
+        "properties": {
+          "color": { "bsonType": "string", "description": "e.g., White, Pink, Black" },
+          "connection": { "bsonType": "string", "description": "e.g., Wireless 2.4GHz, Bluetooth, Wired" },
+          "weight": { "bsonType": "string", "description": "e.g., 54g, 800g" },
+          "sensor": { "bsonType": "string", "description": "For Mice (e.g., Focus Pro 35K Optical Sensor)" },
+          "pollingRate": { "bsonType": "string", "description": "e.g., 1000Hz, 8000Hz" },
+          "switchType": { "bsonType": "string", "description": "For Keyboards (e.g., Linear Red, Tactile Brown)" },
+          "batteryLife": { "bsonType": "string", "description": "e.g., Up to 95 hours" },
+          "hotSwappable": { "bsonType": "bool", "description": "For Keyboards (true/false)" }
+        }
+      },
+      "tags": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" },
+        "description": "Tags for searchability (e.g., ['pink', 'lightweight', 'mechanical'])"
+      },
+      "createdAt": {
+        "bsonType": "date"
+      },
+      "updatedAt": {
+        "bsonType": "date"
+      }
+    }
+  },
+  "exampleDocument": {
+    "_id": { "$oid": "60c72b2f9b1d8b2bad000002" },
+    "name": "Razer Viper V3 Pro",
+    "description": "The GOAT of wireless gaming mice, designed with esports pros for lightweight performance.",
+    "category": "Mouse",
+    "price": 5390.0,
+    "stock": 45,
+    "images": [
+      "/images/products/viper-v3-pro-white.png"
+    ],
+    "specifications": {
+      "color": "White",
+      "connection": "Wireless 2.4GHz / Wired",
+      "weight": "54g",
+      "sensor": "Focus Pro 35K Optical Sensor Gen-2",
+      "pollingRate": "8000Hz",
+      "batteryLife": "Up to 95 hours"
+    },
+    "tags": ["white", "lightweight", "wireless", "esports"],
+    "createdAt": { "$date": "2026-07-08T07:00:00.000Z" },
+    "updatedAt": { "$date": "2026-07-08T07:00:00.000Z" }
+  }
+}
