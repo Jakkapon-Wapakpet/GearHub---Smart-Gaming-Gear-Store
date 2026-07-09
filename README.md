@@ -84,12 +84,16 @@ gearhub
 │
 ├── frontend
 ├── backend
-├── docs
-│   ├── business-model-canvas
-│   ├── use-case-diagram
-│   ├── er-diagram
-│   └── product-backlog
-│
+├── setup-schema.js (DB initialization schema script)
+├── seed-data.js (DB seeding script)
+├── 01_my-ecommerce.md (Project specifications)
+├── 02_business-model-canvas.excalidraw
+├── 03_use-case-diagram.excalidraw
+├── 04_er-diagram.excalidraw
+├── 05_mongodb.schema_user.json & 05_mongodb.example_user.json
+├── 06_mongodb-schema_products.json & 06_mongodb-example_products.json
+├── 06_mongodb-schema_*_specs.json & 06_mongodb-example_*_specs.json
+├── 07_mongodb-shcema_orders.json & 07_mongodb-example_orders.json
 └── README.md
 ```
 
@@ -104,7 +108,7 @@ gearhub
 
 ### 📌 Project Status
 
-Project Planning Phase
+Database Design and Implementation Completed (Hybrid Design with Separated Specifications)
 
 ---
 
@@ -188,12 +192,16 @@ gearhub
 │
 ├── frontend
 ├── backend
-├── docs
-│   ├── business-model-canvas
-│   ├── use-case-diagram
-│   ├── er-diagram
-│   └── product-backlog
-│
+├── setup-schema.js (สคริปต์ตรวจสอบการตั้งค่าโครงสร้างฐานข้อมูล)
+├── seed-data.js (สคริปต์สเปกและข้อมูลตัวอย่างเริ่มต้น)
+├── 01_my-ecommerce.md (คู่มือรายละเอียดระบบ)
+├── 02_business-model-canvas.excalidraw
+├── 03_use-case-diagram.excalidraw
+├── 04_er-diagram.excalidraw
+├── 05_mongodb.schema_user.json & 05_mongodb.example_user.json
+├── 06_mongodb-schema_products.json & 06_mongodb-example_products.json
+├── 06_mongodb-schema_*_specs.json & 06_mongodb-example_*_specs.json
+├── 07_mongodb-shcema_orders.json & 07_mongodb-example_orders.json
 └── README.md
 ```
 
@@ -208,4 +216,4 @@ gearhub
 
 ### 📌 สถานะของโปรเจกต์ (Project Status)
 
-ขั้นตอนการวางแผนโปรเจกต์ (Project Planning Phase)
+ออกแบบและสร้างระบบฐานข้อมูลเสร็จสมบูรณ์ (รูปแบบ Hybrid ที่มีระบบแยกคุณสมบัติสินค้าตามหมวดหมู่)
