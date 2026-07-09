@@ -128,17 +128,26 @@
   * [02_business-model-canvas.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/02_business-model-canvas.excalidraw) - โครงสร้างแผนธุรกิจและรายได้
   * [03_use-case-diagram.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/03_use-case-diagram.excalidraw) - ขอบเขตการทำงานของแต่ละสิทธิ์ผู้ใช้
 * **โครงสร้างฐานข้อมูล (Database Design):**
-  * [04_er-diagram.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/04_er-diagram.excalidraw) - ผังความสัมพันธ์ฐานข้อมูลเชิงสัมพันธ์
-  * [05_mongodb.schema_user.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/05_mongodb.schema_user.json) - โมเดลโครงสร้างตารางสมาชิก
-  * [06_mongodb-schema_products.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_products.json) - โครงสร้างข้อมูลสเปกสินค้า
-  * [07_mongodb-shcema_orders.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/07_mongodb-shcema_orders.json) - โครงสร้างการจัดเก็บรายละเอียดคำสั่งซื้อ
-* **สคริปต์เริ่มต้นระบบ (Database Seeding):**
-  * [seed.js](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/seed.js) - สคริปต์สำหรับเชื่อมต่อ ตั้งค่าระบบ Validate Schema และ Seed ข้อมูลเริ่มต้นใน MongoDB
+  * [04_er-diagram.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/04_er-diagram.excalidraw) - ผังความสัมพันธ์ฐานข้อมูลเชิงสัมพันธ์แบบแยกสเปกสินค้า (1-to-1)
+  * [05_mongodb.schema_user.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/05_mongodb.schema_user.json) - โครงสร้างคอลเลกชันสมาชิก (มีฝังข้อมูล profile แบบ Embedding)
+  * [06_mongodb-schema_products.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_products.json) - โครงสร้างข้อมูลสินค้าหลัก
+  * [06_mongodb-schema_mouse_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_mouse_specs.json) - โครงสร้างสเปกเมาส์เฉพาะทาง (Reference ไปที่สินค้า)
+  * [06_mongodb-schema_keyboard_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_keyboard_specs.json) - โครงสร้างสเปกคีย์บอร์ดเฉพาะทาง (Reference ไปที่สินค้า)
+  * [06_mongodb-schema_headset_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-schema_headset_specs.json) - โครงสร้างสเปกหูฟังเฉพาะทาง (Reference ไปที่สินค้า)
+  * [07_mongodb-shcema_orders.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/07_mongodb-shcema_orders.json) - โครงสร้างการจัดเก็บรายละเอียดคำสั่งซื้อ (Reference ไปที่ผู้ใช้ และทำ Snapshot สินค้า/ที่อยู่แบบ Embedding)
+* **ข้อมูลตัวอย่าง (Mock Data JSON):**
+  * [05_mongodb.example_user.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/05_mongodb.example_user.json) - ข้อมูลสมาชิกตัวอย่าง (10 รายการ)
+  * [06_mongodb-example_products.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-example_products.json) - ข้อมูลสินค้าตัวอย่าง (6 รายการ)
+  * [07_mongodb-example_orders.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/07_mongodb-example_orders.json) - ข้อมูลออเดอร์ตัวอย่าง (6 รายการ)
+  * [06_mongodb-example_mouse_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-example_mouse_specs.json) - ข้อมูลสเปกเมาส์จำลอง
+  * [06_mongodb-example_keyboard_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-example_keyboard_specs.json) - ข้อมูลสเปกคีย์บอร์ดจำลอง
+  * [06_mongodb-example_headset_specs.json](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/06_mongodb-example_headset_specs.json) - ข้อมูลสเปกหูฟังจำลอง
+* **สคริปต์เริ่มต้นระบบ (Database Setup & Seeding):**
+  * [setup-schema.js](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/setup-schema.js) - สคริปต์สำหรับเชื่อมต่อ ตั้งค่าระบบ Validate Schema
+  * [seed-data.js](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/seed-data.js) - สคริปต์สำหรับล้างและ Seed ข้อมูลตัวอย่างลงในฐานข้อมูล
   * **วิธีการรันสคริปต์เพื่อรีเซ็ต/นำเข้าข้อมูล:**
     1. ติดตั้ง Dependencies: `npm install`
-    2. รันด้วย Local MongoDB (Default): `node seed.js`
-    3. รันด้วย MongoDB Atlas (PowerShell): `$env:MONGODB_URI="your_connection_string"; node seed.js`
-    4. รันด้วย MongoDB Atlas (CMD): `set MONGODB_URI=your_connection_string&& node seed.js`
+    2. รันสคริปต์ทั้งหมด (ตั้งค่าและเซ็ตข้อมูล): `npm run db:init` (หรือแยกทำงานด้วย `npm run db:setup` และ `npm run db:seed`)
 
 * **แผนผังจำลองการออกแบบภาพ (Excalidraw Visual Templates):**
   * [08_User-Persona-Journey.excalidraw](file:///c:/coding/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project/08_User-Persona-Journey.excalidraw) - แผนผังภาพ Persona ทั้ง 4 คนแบบจัดเต็ม
